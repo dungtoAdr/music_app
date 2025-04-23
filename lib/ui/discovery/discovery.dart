@@ -6,60 +6,87 @@ class DiscoveryTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          SizedBox(height: 80),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      child: Text("Username:"),
-                    ),
+          Container(
+            color: Colors.blue,
+            height: double.infinity,
+            width: double.infinity,
+            child: Image.asset('assets/abc.jpg',fit: BoxFit.cover,),
+          ),
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 10,
+            child: Card(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(width: 100, child: Text("Username:")),
 
-                    Text("To Trung Dung")
-                  ],
-                ),
-                SizedBox(height: 10,),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      child: Text("Email:"),
+                            Text("To Trung Dung"),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            SizedBox(width: 100, child: Text("Email:")),
+                            Text("tdung@gmail.com"),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            SizedBox(width: 100, child: Text("Address:")),
+                            Text("Hoan Kiem, Ha Noi"),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Text("Cancle"),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 20),
+                            Expanded(
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Text("Submit"),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.green,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    Text("tdung@gmail.com")
-                  ],
-                ),
-                SizedBox(height: 10,),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      child: Text("Address:"),
-                    ),
-                    Text("Hoan Kiem, Ha Noi")
-                  ],
-                ),
-                SizedBox(height: 10,),
-                Row(
-                  children: [
-                    Expanded(child: ElevatedButton(onPressed: (){}, child: Text("Cancle"),style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))
-                    ),)),
-                    SizedBox(width: 20,),
-                    Expanded(child: ElevatedButton(onPressed: (){}, child: Text("Submit"),style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))
-                    ),)),
-                  ],
-                )
-              ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

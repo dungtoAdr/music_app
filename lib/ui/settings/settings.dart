@@ -6,26 +6,25 @@ class SettingsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("data")),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 70),
               Center(
-                child: 
-                  Container(
-                    width: 150,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.blue
-                    ),
-                    child: ClipOval(
-                      child: Image.asset("assets/abc.jpg",fit: BoxFit.cover,),
-                    ),
-                  )
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.blue,
+                  ),
+                  child: ClipOval(
+                    child: Image.asset("assets/abc.jpg", fit: BoxFit.cover),
+                  ),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,6 +44,7 @@ class SettingsTab extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Expanded(
+                    flex: 1,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -62,6 +62,7 @@ class SettingsTab extends StatelessWidget {
                   ),
                   SizedBox(width: 16),
                   Expanded(
+                    flex: 1,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -199,9 +200,21 @@ class SettingsTab extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                     ),
                   ),
-                  child: Text(
-                    "Facebook",
-                    style: TextStyle(color: Colors.white),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: [
+                        Icon(Icons.facebook, color: Colors.white, size: 24),
+                        Expanded(
+                          child: Center(
+                            child: Text(
+                              "Facebook",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -217,7 +230,22 @@ class SettingsTab extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                     ),
                   ),
-                  child: Text("Twitter", style: TextStyle(color: Colors.white)),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          Icon(Icons.biotech, color: Colors.white, size: 24),
+                          Expanded(
+                            child: Center(
+                              child: Text(
+                                "Twitter",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                 ),
               ),
             ],
