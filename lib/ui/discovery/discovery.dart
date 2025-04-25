@@ -12,18 +12,19 @@ class DiscoveryTab extends StatelessWidget {
             color: Colors.blue,
             height: double.infinity,
             width: double.infinity,
-            child: Image.asset('assets/abc.jpg',fit: BoxFit.cover,),
+            child: Image.asset('assets/abc.jpg', fit: BoxFit.cover),
           ),
           Positioned(
-            left: 20,
-            right: 20,
-            bottom: 10,
+            bottom: 20,
+            right: 10,
+            left: 10,
             child: Card(
               color: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
                     padding: EdgeInsets.all(20),
@@ -56,7 +57,6 @@ class DiscoveryTab extends StatelessWidget {
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {},
-                                child: Text("Cancle"),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.black,
                                   foregroundColor: Colors.white,
@@ -64,13 +64,13 @@ class DiscoveryTab extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                 ),
+                                child: Text("Cancel"),
                               ),
                             ),
                             SizedBox(width: 20),
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {},
-                                child: Text("Submit"),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.green,
                                   foregroundColor: Colors.white,
@@ -78,6 +78,7 @@ class DiscoveryTab extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                 ),
+                                child: Text("Submit"),
                               ),
                             ),
                           ],
